@@ -1,3 +1,21 @@
+:root {
+    scroll-behavior: auto;
+}
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+.navbar-brand{
+    font-size: 20px;
+}
+.scroll-percent {
+    z-index: 9;
+    position: fixed;
+    height: 10px;
+    width: 100%;
+    background-color: black;
+}
 .list-group {
     visibility: hidden;
     opacity: 0;
@@ -33,7 +51,23 @@
     padding: 100px 20px;
     background: lightgrey;
 }
-
+.alert-danger{
+    margin-bottom: 0;
+}
 .hide{
     display: none;
+}
+.slide-container{
+    width: 300vw;
+    transition: all 1s;
+}
+.slide-box{
+    width: 100vw;
+    float: left;
+}
+.slide-box img{
+    width: 100%;
+}
+.slide-btn{
+    text-align: center;
 }

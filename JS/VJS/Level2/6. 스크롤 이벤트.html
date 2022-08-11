@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="CSS/css.css" rel="stylesheet">
+    <title>Hello, world!</title>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <span class="navbar-brand">JShop</span>
+        <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+<ul class="list-group">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+</ul>
+<div class="black-bg">
+    <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <form action="success.html">
+            <div class="my-3">
+                <input type="text" class="form-control" id="email">
+            </div>
+            <div class="my-3">
+                <input type="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">전송</button>
+            <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+    </div>
+</div>
+<div class="scroll-percent"></div>
+<div class="main-bg">
+    <h4>Shirts on Sale</h4>
+    <button id="login" class="btn btn-danger">로그인</button>
+</div>
+<div class="alert alert-danger">
+    <span id="sec">5</span>초 이내 구매시 사은품 증정!
+</div>
+<div style="overflow: hidden">
+    <div class="slide-container">
+        <div class="slide-box">
+            <img src="car1.png" alt="car1">
+        </div>
+        <div class="slide-box">
+            <img src="car2.png" alt="car2">
+        </div>
+        <div class="slide-box">
+            <img src="car3.png" alt="car3">
+        </div>
+    </div>
+    <div class="slide-btn">
+        <button class="slide-pre">이전</button>
+        <button class="slide-1">1</button>
+        <button class="slide-2">2</button>
+        <button class="slide-3">3</button>
+        <button class="slide-next">다음</button>
+    </div>
+    <div style="height: 200px"></div>
+    <div class="lorem" style="width: 100%; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+    </div>
+</div>
+
+<!--
+
+-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    document.querySelector('.navbar-toggler').addEventListener('click', function(){
+        document.querySelector('.list-group').classList.toggle('show');
+    });
+
+    $('#login').on('click', function(){
+        $('.black-bg').toggleClass('show-modal');
+    });
+
+    $('#close').on('click', function(){
+        $('.black-bg').toggleClass('show-modal');
+    })
+
+    //전송버튼 누르면 입력값이 공백이면 알림창 띄우기
+    document.querySelector('.btn-primary').addEventListener('click', function (e){
+        if(document.querySelectorAll('.form-control')[0].value === ''){
+            alert('ID')
+            e.preventDefault()
+        }else{
+            if(!(/\S+@\S+\.\S+/.test(document.querySelectorAll('.form-control')[0].value))){
+                alert('이메일 형식 아님')
+                e.preventDefault()
+            }
+        }
+        if(document.querySelectorAll('.form-control')[1].value === ''){
+            alert('PW')
+            e.preventDefault()
+        }else{
+            if(!(/[A-Z]+/.test(document.querySelectorAll('.form-control')[1].value))){
+                alert('대문자 하나 필수');
+                e.preventDefault();
+            }
+        }
+    });
+
+    let sec = document.querySelector('#sec').textContent;
+    console.log(sec);
+    let timer = setInterval(function (){
+        sec--;
+        document.querySelector('#sec').innerHTML = sec;
+        if(parseInt(sec) === 0){
+            document.querySelector('.alert-danger').classList.add('hide');
+            clearInterval(timer);
+        }
+    }, 1000);
+
+    let num = 0;
+    $('.slide-next').on('click', function (){
+        if(num === $('.slide-box').length -1){
+            num = $('.slide-box').length -1;
+        }else{
+            num++;
+            $('.slide-container').css('transform', `translateX(-${num}00vw`);
+        }
+    });
+    $('.slide-pre').on('click', function (){
+        if(num === 0){
+            num = 0;
+        }else{
+            num--;
+            $('.slide-container').css('transform', `translateX(-${num}00vw`);
+        }
+    });
+    $('.slide-1').on('click', function (){
+        $('.slide-container').css('transform', 'translateX(0)');
+        num = 0;
+    })
+    $('.slide-2').on('click', function (){
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+        // document.querySelector('.slide-container').style.transform = 'translateX(-100vw)'
+        num = 1;
+    })
+    $('.slide-3').on('click', function (){
+        $('.slide-container').css('transform', 'translateX(-200vw)');
+        num = 2;
+    });
+    /*
+        scroll event = window에 event
+        주의점
+        1. scroll 이벤트 리스너 안의 코드는 1초에 60번 이상 실행됨.
+            - 컴퓨터에 부담.
+        2. 바닥체크도 여러번 중복으로 가능.
+
+        현재 페이지 끝까지 스크롤 체크 ? body 태그 맨 밑
+        <html>의 실제 높이
+        document.querySelector(html).scrollHeight
+        페이지 보이는 높이
+        document.querySelector(html).clientHeight
+        현재 스크롤 양
+        window.scrollY
+
+        scrollY : y축 좌표
+        pageYOffset
+        scrollX : x축 좌표
+
+        scrollTo(x,y) : 강제 스크롤
+        scrollBy(x,y) : 현재위치부터 강제로 스크롤
+
+        $(window).on('scroll', function(){
+            $(window).scrollTop() 현재 스크롤바 위치 출력
+            $(window).scrollTop(100)  == scrollTo
+        })
+     */
+    $(window).on('scroll', function(){
+        if($(window).scrollTop() > 255){
+            $('.navbar-brand').css('font-size', '16px');
+        }else{
+            $('.navbar-brand').css('font-size', '20px');
+        }
+    })
+    // div 스크롤바 다 내렸을 경우
+    // div 스크롤바 내린 양 + 눈에 보이는 div 높이 == div 실제 높이
+    document.querySelector('.lorem').addEventListener('scroll', function (){
+        // div 스크롤 바 내린 양
+        let scroll = (document.querySelector('.lorem').scrollTop);
+       // 눈에 보이는 div
+        let divHeight = (document.querySelector('.lorem').clientHeight);
+        // div 실제 높이
+       let realHeight = (document.querySelector('.lorem').scrollHeight);
+
+       if(realHeight === Math.round(scroll + divHeight)){
+           alert('END');
+       }
+    });
+
+    window.addEventListener('scroll', function (){
+        let viewHeight = document.querySelector('html').clientHeight;
+        let scroll = window.scrollY;
+        let height = document.querySelector('html').scrollHeight;
+        let percent = Math.round((viewHeight + scroll) / height * 100);
+        $('.scroll-percent').css('width', `${percent}%`)
+    })
+</script>
+
+</body>
+</html>

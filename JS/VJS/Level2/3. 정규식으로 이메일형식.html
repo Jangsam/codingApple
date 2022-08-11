@@ -93,14 +93,20 @@
         if(document.querySelectorAll('.form-control')[0].value === ''){
             alert('ID')
             e.preventDefault()
-        }
-        if(/\S+@\S+\.\S+/.test(document.querySelectorAll('.form-control')[0].value)){
-            alert('이메일 형식 아님')
-            e.preventDefault()
+        }else{
+            if(!(/\S+@\S+\.\S+/.test(document.querySelectorAll('.form-control')[0].value))){
+                alert('이메일 형식 아님')
+                e.preventDefault()
+            }
         }
         if(document.querySelectorAll('.form-control')[1].value === ''){
             alert('PW')
             e.preventDefault()
+        }else{
+            if(!(/[A-Z]+/.test(document.querySelectorAll('.form-control')[1].value))){
+                alert('대문자 하나 필수');
+                e.preventDefault();
+            }
         }
     });
 

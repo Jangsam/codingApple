@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>태조 이성계가 태어난 년도?</p>
+<input type="text" id="answer">
+<button id="send">제출</button>
+<script>
+  // 1 나이 출신지역
+  let age = 25;
+  const place = '안산';
+
+  // 2
+  var name = 'park';
+  var id = 0;
+  function showName(){
+      var name = 'kim';
+      var id = 1;
+      console.log(name);
+  }
+  showName();
+  console.log(id);
+  // 1 kim 2 0
+
+  //  3 이자율
+  //  첫 예금액이 50000 이상이면 이자율 20% 50000원 미만이면 15%
+  // 2년 후 금액
+  var 예금액 = 60000;
+  var 미래예금액 = 0;
+
+  function caculate(money){
+      if(money >= 50000){
+          미래예금액 = money * 1.2 * 1.2
+      }else{
+          미래예금액 = money + 1.15 * 1.15
+      }
+  }
+
+  caculate(예금액);
+  console.log(미래예금액);
+
+  //4 커피 리필
+  /*
+    방금 마신 커피의 3분의 2만큼 총 2번 리필해줌
+    ex) 90ml -> 60ml -> 40ml
+   */
+  var first = 90;
+
+  function ripple(num){
+     return num + num * 2 / 3 + num * 2 / 3 * 2 /3;
+  }
+  let op = ripple(90);
+  console.log(op)
+
+  let count = 0;
+  document.querySelector('#send').addEventListener('click', (e) => {
+      count++;
+      if(document.querySelector('#answer').value == 1335){
+          alert('성공');
+      }else{
+          if(count == 3){
+              alert('실패');
+          }
+          console.log(count)
+      }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn">버튼</button>
+
+
+<script>
+   var obj = {
+       data : {
+           func : function(){
+               console.log('obj : '+ this)
+           }
+       }
+   }
+
+   var obj2 = {
+       data : {
+           func : () => {
+               console.log('obj2 : ' + this)
+           }
+       }
+   }
+
+   var obj3 = {
+       data : {
+           func(){
+               console.log('obj3 : '+ this);
+           }
+       }
+   }
+
+   var obj4 = {
+       func : () => {
+           console.log(this);
+       }
+   }
+
+    obj.data.func();  // obj
+    obj2.data.func(); // window
+    obj3.data.func(); // obj
+    obj4.func();
+
+
+    function 기계(){
+        this.name = 'kim'
+    }
+
+    var obj5 = new 기계();
+
+
+    document.querySelector('#btn').addEventListener('click', function(e){
+        console.log(this);
+        console.log(e.currentTarget);
+        var arr = [1, 2, 3];
+        arr.forEach(function (a){
+            console.log(this);
+        });
+    });
+    // 1. this = 1 || 2 window
+
+   var obj6 = {
+       이름들 : ['kim', 'lee', 'park'],
+       함수 : function (){
+           console.log(this); // obj6
+           obj6.이름들.forEach(function (){
+               console.log(this); // window
+           });
+           obj6.이름들.forEach(()=>{
+               console.log(this); // obj6
+           })
+       }
+   }
+
+   obj6.함수();
+   // window
+
+</script>
+</body>
+</html>

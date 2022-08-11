@@ -1,0 +1,12 @@
+다형성(polymorphism)
+generic
+
+poly : 다수의
+morphism : 구조, 형태
+여러가지의 다른 형태들
+
+
+concert type : string, number, boolean, void, unKnown ...
+
+generic 사용 이유.
+call signature를 작성할 때, 들어올 확실한 타입을 모를 때

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn">버튼</button>
+
+<script>
+    //1
+    var 사람 = {
+        name : '손흥민',
+        sayHi : function(){
+            console.log(`안녕 나는 ${this.name}`)
+        }
+    }
+
+    사람.sayHi();
+
+    //2
+    var 자료 = {
+        data : [1, 2, 3, 4, 5],
+    }
+
+
+
+    자료.전부더하기 = function (){
+        var add = 0;
+        this.data.forEach(function(a) {
+            add = add + a;
+        });
+        console.log(add);
+    }
+    자료.전부더하기2 = function(){
+        var add2 = 0;
+        this.data.forEach( (a) => {
+            add2 = add2 + a;
+        });
+        console.log(add2);
+    }
+    자료.전부더하기();
+    자료.전부더하기2();
+
+
+    setTimeout(function(){
+        console.log('안녕')}, 1000)
+
+    function func(){
+        console.log('안녕')
+    }
+    setTimeout(func, 1000)
+
+
+    document.querySelector('#btn').addEventListener('click', function (){
+        setTimeout( () => {
+            console.log(this.innerHTML)}, 1000)
+    })
+</script>
+</body>
+</html>

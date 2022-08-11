@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  function 삼육구(num){
+    if(!(num % 3)){
+        console.log('박수')
+    }else{
+        console.log('통과')
+    }
+  }
+
+  삼육구(15);
+
+  function 삼육구2(num){
+      if(!(num % 3) && !(num % 9)){
+          console.log('박수2')
+      }else if(!(num % 3)){
+          console.log('박수')
+      }else{
+          console.log('통과')
+      }
+  }
+
+  삼육구2(18);
+
+  function 합격(arr){
+      const addAll = arr.reduce((acc, cur) => {
+          return acc + cur
+      });
+      var result = false;
+      if(addAll > 200){
+          result = true;
+          arr.forEach((el) => {
+              if(el < 30){
+                  console.log(this)
+                  this.result = false;
+                  return result;
+              }else{
+                  return this.result;
+              }
+          })
+      }else{
+          return result;
+      }
+  }
+
+  let a = 합격([100, 70, 50])
+  console.log(a);
+</script>
+</body>
+</html>

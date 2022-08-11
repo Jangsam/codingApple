@@ -1,0 +1,26 @@
+App.js
+
+<div></div> <- html이 아니라 JSX(.js파일에서 사용하는 html 대용품)
+
+React에서 <div>만드는 법
+    React.createElement('div',null,'Hello World');
+
+(JSX) 사용하면
+    <div></div>
+
+js = class
+jsx = className
+
+중괄호 문법
+{변수명}
+
+{ post }
+document.querySelector('h4').innerHtml = post
+
+
+style 넣을땐 style = { { } }
+
+JSX 문법
+1. className
+2. 중괄호
+3. html에 style 속성 { }

@@ -1,0 +1,38 @@
+ES5
+Object.create(프로토타입 object);
+
+var 부모 = { name : 'Kim', age : 50 };
+
+1. constructor
+
+2. Object.create( 물려받을 부모 Obj )
+
+var 자식 = Object.create(부모);
+자식.age = 20;
+
+var 손자 = Object.create(자식);
+
+
+ES6
+
+class 부모{
+    constructor(a, b){
+        this.name = a;
+        //자식에 직접 함수 추가
+        this.sayHi = function(){ console.log('hello') }
+    }
+    //부모.prototype 에 추가
+    sayHi( ){
+        console.log('hi');
+    }
+
+}
+
+부모.prototype.sayHello = function(){ };
+
+var 자식 = new 부모();
+var 자식 = new 부모(a, b);
+
+자식.__proto__ == 부모.prototype
+==
+Object.getPrototypeOf(자식);

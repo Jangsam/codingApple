@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="CSS/2.css">
+</head>
+<body>
+
+<!--
+    function 문법 : 긴 코드를 축약하고 싶을 때
+    className selector 사용시 인덱싱번호를 같이 기입 getElementByClassName('??')[0]
+-->
+
+  <div class="alertBox" id="alertBox"><p id="title">알림창</p>
+      <button onclick=openAlert('none')>X</button></div>
+  <button type="button" onclick=openAlert('block','ID');>버튼1</button>
+  <button type="button" onclick="openAlert('block','PW')">버튼2</button>
+  <script>
+      function openAlert(cmd, title){
+          document.getElementById('alertBox').style.display = cmd;
+          document.getElementById('title').innerHTML = `${title}를 입력하세요.`
+      }
+  </script>
+</body>
+</html>

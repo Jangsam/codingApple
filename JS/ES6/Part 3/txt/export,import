@@ -1,0 +1,54 @@
+export default 문법
+
+import 가져올거 from '경로'
+export default 내보낼거
+// export default 를 사용하면 import 할 때 이름을 바꿔도 됨
+// export default 는 파일당 1회만 사용 가능
+
+export default 가 아닌 export 만 할 경우
+export 한 변수명을 정확하게 입력해야함
+export 와 export default 는 동시에 사용 가능
+
+변수명이 마음에 안들면 새로 짓자
+import { 변수 as 새변수명 } from '경로'
+
+모든걸 다 import 해오는 * 기호
+import * as 변수들명 from '경로'
+import 디폴트, * as 변수들명 from '경로'
+
+index.html
+
+<script type = 'module'>
+    1. import a from './library.js';
+    2. import aaa from './library.js';
+
+    console.log(a);
+    console.log(aaa);
+
+    import { a } from './library.js';
+
+    import 작명, { a, b } from ~~
+    console.log( 작명 );
+
+</script>
+
+
+library.js
+
+var a = 10;
+//X
+export default a;
+export default b;
+//O
+export { a };
+export { b };
+export { a, b };
+
+export var a = 10;
+
+var a = 10;
+var b = 20;
+var c = 30;
+
+export { a, b };
+export default c;

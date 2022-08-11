@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+<script>
+
+    class 할아버지{
+        constructor(name, age) {
+            this.성 = 'Kim';
+            this.이름 = name;
+            this.나이 = age;
+        }
+        sayHi(){
+            console.log('안녕 저는 할아버지에요');
+        }
+    }
+
+    class 아버지 extends 할아버지{
+        constructor(name, age) {
+            super(name, age); // 상속받은것들
+            this.name = 50;
+        }
+        sayHi(){
+            console.log(`안녕 저는 아버지에요`)
+            super.sayHi();
+        }
+    }
+
+    var 아버지1 = new 아버지('민덕', 20);
+    //var 할아버지1 = new 할아버지('만덕');
+
+</script>
+</body>
+</html>

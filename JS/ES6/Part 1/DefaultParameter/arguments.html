@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script !src="">
+
+    function box(){
+        return 10;
+    }
+    function add(a, b = box()){
+        console.log(a + b);
+    }
+    add(1);
+
+    function func1(a,b,c){
+        console.log(a,b,c);
+    }
+
+    function func2(a,b,c){
+        console.log(arguments);
+    }
+
+    func2(1,2,3);
+</script>
+</body>
+</html>

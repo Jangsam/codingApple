@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--
+
+        document -> html 웹 문서
+        .(마침표) -> ~ 의
+        getElementById('??') -> id가'??'인 html 요소를 찾기
+        innerHTML -> 내부 html
+        = -> 오른쪽에 있는걸 왼쪽에 대입
+        '???' -> ???라는 문자
+
+     -->
+    <h1 id="hello">안녕하세요</h1>
+    <h2 id="hw">1번째 숙제</h2>
+
+    <script>
+        document.getElementById('hello').innerHTML = '안녕';
+
+        document.getElementById('hw').style.fontSize = '16px'
+        document.getElementById('hw').style.color = 'red';
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  class pet{
+      constructor(name, color) {
+        this.name = name;
+        this.color = color;
+      }
+  }
+
+  class dog extends pet{
+      constructor(name, color) {
+          super(name, color);
+      }
+  }
+
+  class cat extends pet{
+      constructor(name,  color, age) {
+          super(name, color);
+          this.age = age;
+      }
+      nextAge(){
+          this.age = this.age + 1
+      }
+  }
+
+  var dog1 = new dog('말티즈','white');
+  var cat1 = new cat('코숏', 'white', 5);
+
+
+  class Unit{
+      constructor() {
+          this.attack = 5;
+          this.hp = 100;
+      }
+      get battlePoint(){
+          console.log(this.attack + this.hp);
+      }
+      set heal(hp){
+          this.hp += hp;
+      }
+  }
+
+  var unit1 = new Unit();
+
+
+  var data = {
+      odd : [],
+      even : [],
+      setNum : function (...rest){
+          rest.forEach((a)=>{
+              if(a % 2 === 0){
+                  this.even.push(a);
+              }else{
+                  this.odd.push(a);
+              }
+          });
+      },
+      getNum : function(){
+          var sortBox = [...this.odd, ...this.even].sort(function (a, b){
+              return a - b;
+          });
+          return sortBox;
+      }
+  }
+
+
+</script>
+</body>
+</html>

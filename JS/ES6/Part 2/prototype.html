@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function 기계(이름, 나이){
+        this.name = 이름;
+        this.age = 나이;
+        this.sayHi = function(){
+            console.log(`안녕하세요 ${this.name} 입니다`);
+        }
+    }
+
+    var 학생1 = new 기계('박', 10);
+
+
+    기계.prototype.gender = '남';
+
+    var arr = [1,2,3];
+    var arr = new Array(1,2,3);
+    var obj = { name : 'Kim'};
+    var obj = new Object({name : 'park'});
+
+
+    var 부모 = { name : 'Kim'};
+    var 자식 = {};
+    자식.__proto__ = 부모;
+    자식.name;
+</script>
+</body>
+</html>

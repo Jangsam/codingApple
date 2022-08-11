@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    function 더하기(a, b, c){
+        console.log(a + b + c);
+    }
+
+    var array = [10,20,30];
+    더하기(array[0], array[1], array[2]);
+
+    더하기.apply(undefined, array);
+    더하기(...array);
+
+    var person = {
+        hi : function() {
+            console.log(this.name + ' hi');
+        }
+    }
+
+    var person2 = {
+        name : 'kim'
+    }
+
+    person.hi.apply(person2);
+</script>
+</body>
+</html>

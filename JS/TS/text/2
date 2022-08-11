@@ -1,0 +1,54 @@
+타입 스크립트에서 -> 자바 스크립트로 컴파일
+TS에서 오류가 있을 시 컴파일 안됨
+
+
+let a : string = 'apple'
+let b = false <- 이걸 선호
+
+Ts가 타입을 추론하지 못할때 명시적으로 작성한다.
+
+let c = [1, 2, 3]
+c.push('1') => x
+숫자 배열에 문자 배열 추가 막아줌.
+웬만해서 같은 타입의 배열을 만들어서 그런거 같다/
+
+ex)
+빈배열
+let c : number[] = []
+c.push('1') => x
+이럴때는 명시적 작성
+
+
+
+let a = [1, 2];
+let b : string[] = ['i1', '1'];
+let c : boolean[] = [true];
+
+가능한 ts가 추론하게 하자
+
+const player = {
+    name : 'nico' //Ts에서 name은 string을 추론 해줌
+}
+
+player.name = 1;
+
+==> X
+
+ex) 모든 player가 name을 갖고 age는 몇명만 갖고 있을때 표현 방법
+
+const player : object = {
+    name : 'nico'
+}
+
+player.name ==> obj로 표현되서 에러
+
+
+배운거
+타입 alias(별칭)
+return 값 타입 지정
+readonly 속성 추가
+tuple
+type of any
+type of unknown
+"" void
+: never

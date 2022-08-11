@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="CSS/2.css">
+</head>
+<body>
+
+<!--
+    document.getElementById.addEventListener('??', function(){});
+-->
+
+<div class="alertBox" id="alertBox"><p id="title">알림창</p>
+  <button id="close">X</button></div>
+<button type="button" onclick=openAlert('block','ID');>버튼1</button>
+<button type="button" onclick="openAlert('block','PW')">버튼2</button>
+<script>
+
+
+  document.getElementById('close').addEventListener('click', function(){
+    document.getElementById('alertBox').style.display = 'none';
+  });
+
+  function openAlert(cmd, title){
+    document.getElementById('alertBox').style.display = cmd;
+    document.getElementById('title').innerHTML = `${title}를 입력하세요.`
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+함수 만드는 방법
+
+1. function 함수(){ }
+
+2. var 함수 = function(){ }
+
+함수 실행하는 방법
+
+함수();
+
+-------------------------------------------
+
+ES6
+Arrow Function
+특징 : 바깥에 있던 this 값을 내부에서 그대로 사용
+
+var 함수 = () => {
+
+}
+
+함수는 그냥 쓰는 문법이 아님.
+
+1. 코드들을 기능으로 묶고 싶을 때 사용
+
+2. 입출력 기계를 만들고 싶을 때 사용
+    ex) var func = (a) => { return a + 10 }
+    func(5);
+
+장점
+1. 입출력 기계 만들 때 보기 쉽다.
+    var func = (a) => { return a + 10 }
+2. 파라미터 1개면 소괄호 생략 가능
+    var func = a => { return a + 10 }
+3. 코드 한줄이면 중괄호 생략 가능
+    var func = (a) => return a + 10
+
+Arrow func 예시
+
+1. forEach 콜백함수
+   [1, 2, 3, 4].forEach(function(a){
+        console.log(a);
+   });
+
+   ->
+
+   [1, 2, 3, 4].forEach( a => console.log(a); );
+
+2. Event Listener
+    document.querySelector('.??').addEventListener('click', function(){
+        console.log(this) // e.currentTarget
+    });
+
+    ->
+
+    document.querySelector('.??').addEventListener('click', (e) => {
+        console.log(this) // window
+    });
+
+3. Object 안의 함수
+    var obj = {
+        func : () => {
+            console.log(this) // window
+        }
+    }
+
+
+
+Arrow function 은 function 을 대체하는 신 문법이 아님.

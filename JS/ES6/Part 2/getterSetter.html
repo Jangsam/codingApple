@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var 사람 = {
+    name : 'Park',
+    age : 30,
+      get nextAge(){
+        return this.age + 1;
+      },
+      set setAge(나이){
+        this.age = parseInt(나이);
+      }
+
+  }
+
+  //사람.nextAge();
+  사람.nextAge;
+  //사람.setAge('100');
+  사람.setAge = '10';
+
+  class 사람2{
+      constructor() {
+        this.name = 'Park';
+        this.age = '20';
+      }
+      get getAge(){
+          return this.age;
+      }
+      set setAge(name){
+          this.name = name;
+      }
+  }
+
+  var 사람3 = new 사람2();
+
+
+  //getter 는 return 값 필수 파라미터 있으면 안됨.
+
+  //setter 는 파라미터가 1개 있어야합니다.
+
+</script>
+</body>
+</html>

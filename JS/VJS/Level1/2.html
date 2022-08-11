@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./CSS/2.css">
+</head>
+<body>
+
+    <!--
+        UI 만드는 법칙
+`
+        text. HTML CSS 로 미리 UI 디자인을해놓고 필요하면 평소에 숨김
+        2. 버튼을 누르거나할 경우 UI를 보여달라고 자바 스크립트 코드 짬
+
+    -->
+
+    <div class="alertBox" id="alertBox">알림창
+        <button type="button" onclick = document.getElementById('alertBox').style.display='none';>X</button></div>
+    <button type="button" id="btn" onclick=document.getElementById('alertBox').style.display='block';>버튼</button>
+
+
+    <script>
+
+
+    </script>
+
+</body>
+</html>

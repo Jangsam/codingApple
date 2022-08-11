@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+
+   var 학생1 = {
+       name : `kim`,
+       age : 15,
+       sayHi : function(){
+           console.log(`안녕하세요 ${this.name} 입니다.`);
+       }
+   }
+
+   function 기계(name){
+       this.name = name;
+       this.age = 15;
+       this.sayHi = function(){
+           console.log(`안녕하세요 ${this.name} 입니다.`);
+       }
+   }
+   기계.sayBy = function(){
+       console.log(`안녕히가세요.`);
+   }
+
+   기계.prototype.sayBye = function(){
+       console.log(`${this.name} 안녕히 가세요.`);
+   }
+   var 학생1 = new 기계('kim');
+   var 학생2 = new 기계('park');
+
+
+
+   기계.prototype.gender = '남';
+
+</script>
+</body>
+</html>

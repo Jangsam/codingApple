@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+  var arr = [2,3,4];
+
+  var [a,b,c = 10] = [2,3];
+
+
+  var obj = { name : 'Kim', age : 30};
+  var name = obj.name;
+  var age = obj.age;
+
+  var { name, age = 31 } = {name : 'kim'};
+
+  console.log(`name : ${name} age : ${age}`);
+
+  /*
+    obj = key 값이 같아야함.
+   */
+
+  var name = 'Kim';
+  var age = 30;
+
+  var obj = { name : name, age: age};
+  var obj = { name, age};
+
+
+  function 함수( {name, age}){
+      console.log(name);
+      console.log(age);
+  }
+
+  함수({name : 'Kim', age : 30});
+
+
+
+  console.log(1111111111);
+
+  function draw1(h){
+      if(h==0)
+          return;
+      draw1(h - 1);
+
+      for(var i = 0; i <h; i++){
+          console.log('*');
+      }
+      console.log();
+  }
+
+  
+
+  draw1(5);
+
+
+
+  
+</script>
+</body>
+</html>
